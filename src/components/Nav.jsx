@@ -7,7 +7,7 @@ function Nav() {
   return (
     <nav className="w-[100%] h-28 bg-black text-white shadow-2xl shadow-black ">
       <div className="w-[100%] h-[75%]   flex justify-between gap-5 p-5 px-10">
-        <div className="flex justify-center items-center text-3xl">
+        <div className="flex justify-center items-center text-3xl cursor-pointer">
           <span>V-Shop</span>
           <FaShopify />
         </div>
@@ -29,7 +29,7 @@ function Nav() {
           <span className="absolute top-[-7px] left-3">0</span>
         </div>
       </div>
-      <div className="w-full h-[45%] bg-gray-800 flex justify-center items-center list-none gap-10 ">
+      <div className="w-full h-[45%] bg-gray-800 flex justify-center items-center list-none gap-10 cursor-pointer ">
         <li>Home</li>
         <li>About Us</li>
         <li>Contact Us</li>
