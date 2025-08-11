@@ -7,7 +7,7 @@ import { dummydata } from "../dummydata";
 function Home({ query, setQuery }) {
   const [cate, setCat] = useState(dummydata);
   return (
-    <div className="mt-12">
+    <div className="mt-36">
       <Hero />
       <Categories cate={cate} setCat={setCat} dummydata={dummydata} />
       <div className="p-10 flex flex-col justify-center items-center gap-10">

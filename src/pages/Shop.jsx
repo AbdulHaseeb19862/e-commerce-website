@@ -23,8 +23,8 @@ function Shop({ query, setQuery }) {
   );
   console.log(filterData);
   return (
-    <div className="w-full ">
-      <div className="flex justify-center items-center mt-20">
+    <div className="w-full  ">
+      <div className="flex justify-center items-center mt-46">
         <h2 className="flex items-center gap-3 text-5xl font-bold mb-3">
           Shop <FaShopify />
         </h2>

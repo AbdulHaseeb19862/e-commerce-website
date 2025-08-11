@@ -3,6 +3,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useSelector, useDispatch } from "react-redux";
 import { removeToCart } from "../feature/cartSlice";
 import EmptyCart from "../components/EmptyCart";
+import { toast, Bounce } from "react-toastify";
 
 function Cart() {
   const items = useSelector((state) => state.cart);
@@ -10,7 +11,7 @@ function Cart() {
   var total = items.reduce((a, b) => a + b.price, 0);
   const dispatch = useDispatch();
   return (
-    <div className="w-full min-h-screen pt-12 flex flex-col gap-10   pb-14 ">
+    <div className="w-full min-h-screen pt-54 flex flex-col gap-10   pb-14  ">
       {items.length === 0 ? (
         <EmptyCart />
       ) : (
@@ -29,7 +30,20 @@ function Cart() {
               </div>
               <button
                 className="flex items-center gap-2 bg-red-600 px-4 py-2 text-white rounded-xl cursor-pointer hover:opacity-70"
-                onClick={() => dispatch(removeToCart(item.id))}
+                onClick={() => {
+                  dispatch(removeToCart(item.id));
+                  toast.error("Product Deleted Successfully.....", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                  });
+                }}
               >
                 Remove <RiDeleteBin6Line />
               </button>
